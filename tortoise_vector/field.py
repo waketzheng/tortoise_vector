@@ -1,10 +1,10 @@
 from typing import Any, Type
 
-from tortoise import fields
+from tortoise.fields.base import Field
 from tortoise.models import Model
 
 
-class VectorField(fields.Field, list):
+class VectorField(Field, list):  # type:ignore
     """Defines a `vector` in postgres, this is needed to be able to
     use the vector extenssion since all the functions uses a vector
     instead of a float4[]
@@ -22,7 +22,7 @@ class VectorField(fields.Field, list):
         self._schema = schema or "public."
 
     @property
-    def SQL_TYPE(self) -> str:
+    def SQL_TYPE(self) -> str:  # type: ignore
         return f"{self._schema}vector({self._vector_size})"
 
     def to_db_value(self, value: list[float], instance: Type[Model] | Model) -> str:
