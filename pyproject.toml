@@ -18,7 +18,7 @@ dev = [
 [project.urls]
 homepage = "https://github.com/Chr0nos/tortoise_vector"
 repository = "https://github.com/Chr0nos/tortoise_vector.git"
-documentation = "https://github.com/waketzheng/tortoise_vector/blob/master/tortoise_vector/README.md"
+documentation = "https://github.com/Chr0nos/tortoise_vector/blob/master/tortoise_vector/README.md"
 
 [tool.poetry]
 packages = [{include = "tortoise_vector"}]
